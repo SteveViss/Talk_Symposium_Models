@@ -7,7 +7,6 @@
 \usetheme{Pittsburgh}
 
 %%%%% REMOVE THE NAV BAR
-\beamertemplatenavigationsymbolsempty
 
 %%%%% CHOOSE SYMBOLS
 \setbeamertemplate{itemize item}[circle]
@@ -87,13 +86,21 @@
     \vfill%
 }
 
-\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bg}{bg}
+\setbeamertemplate{tableofcontents}{
+  \hfill
+    \bigskip
+  \hfill
+}
+
+\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bg1}{bg1}
+\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bg2}{bg2}
 %\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bg-alt}{bg-alt}
 
 \setbeamertemplate{background canvas}{%
     \ifnum\c@framenumber=1%
-        \pgfuseimage{bg}
-    \else%
+        \pgfuseimage{bg1}
+    \else
+        \pgfuseimage{bg2}%
     \fi%
 }
 
